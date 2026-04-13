@@ -22,11 +22,9 @@ pipeline {
                 bat 'docker build -t inventory-management-app .'
             }
         }
-        
         stage('Kubernetes Deploy') {
             steps {
-                // Using --validate=false to bypass the connection/auth error
-                bat 'kubectl apply -f deployment.yaml --validate=false'
+                bat 'kubectl apply -f deployment.yaml --kubeconfig="C:\\Users\\NAVEEN BABU\\.kube\\config" --validate=false'
             }
         }
     }
