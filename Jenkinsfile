@@ -24,7 +24,8 @@ pipeline {
         }
         stage('Kubernetes Deploy') {
             steps {
-                bat 'kubectl apply -f deployment.yaml --kubeconfig="C:\\Users\\NAVEEN BABU\\.kube\\config" --validate=false'
+                // We use double backslashes so Jenkins reads the path correctly
+                bat 'kubectl apply -f deployment.yaml --kubeconfig="config" --validate=false'
             }
         }
     }
