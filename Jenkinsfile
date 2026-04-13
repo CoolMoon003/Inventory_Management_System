@@ -24,7 +24,7 @@ pipeline {
         }
         stage('Kubernetes Deploy') {
             steps {
-                bat 'kubectl apply -f deployment.yaml --kubeconfig="C:\\Users\\NAVEEN BABU\\.kube\\config" --validate=false'
+                bat 'kubectl apply -f deployment.yaml --kubeconfig="k8s_config/config" --validate=false'
             }
         }
     }
